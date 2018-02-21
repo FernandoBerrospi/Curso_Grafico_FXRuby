@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MANTENEDOR_MVC@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.7">
+    <root id="1"/>
+    <database id="2" parent="1" name="MANTENEDOR_MVC">
+      <ObjectId>49152</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12938</ObjectId>
+    </database>
+    <database id="4" parent="1" name="SGA_UNT">
+      <ObjectId>24628</ObjectId>
+    </database>
+    <database id="5" parent="1" name="Cliente_App">
+      <ObjectId>32768</ObjectId>
+    </database>
+    <role id="6" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="7" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="9" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="10" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="11" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="12" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-02-20.21:59:23.906</IntrospectionTimestamp>
+      <IntrospectionStateNumber>5084</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="13" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="14" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="15" parent="2" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+    </schema>
+    <schema id="16" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+    </schema>
+    <schema id="17" parent="2" name="information_schema">
+      <ObjectId>12648</ObjectId>
+    </schema>
+    <sequence id="18" parent="12" name="cargos_cargo_id_seq">
+      <ObjectId>49198</ObjectId>
+      <StateNumber>5077</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="19" parent="12" name="empleados_empleado_id_seq">
+      <ObjectId>49206</ObjectId>
+      <StateNumber>5078</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="20" parent="12" name="login_login_id_seq">
+      <ObjectId>49220</ObjectId>
+      <StateNumber>5080</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="21" parent="12" name="usuarios_usuario_id_seq">
+      <ObjectId>49229</ObjectId>
+      <StateNumber>5082</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <table id="22" parent="12" name="cargos">
+      <ObjectId>49200</ObjectId>
+      <StateNumber>5078</StateNumber>
+    </table>
+    <table id="23" parent="12" name="empleados">
+      <ObjectId>49208</ObjectId>
+      <StateNumber>5078</StateNumber>
+    </table>
+    <table id="24" parent="12" name="login">
+      <ObjectId>49222</ObjectId>
+      <StateNumber>5084</StateNumber>
+    </table>
+    <table id="25" parent="12" name="usuarios">
+      <ObjectId>49231</ObjectId>
+      <StateNumber>5084</StateNumber>
+    </table>
+    <column id="26" parent="22" name="cargo_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>5077</StateNumber>
+      <DefaultExpression>nextval(&apos;cargos_cargo_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>cargos_cargo_id_seq</SequenceName>
+    </column>
+    <column id="27" parent="22" name="descripcion">
+      <Position>2</Position>
+      <DataType>varchar(60)|0</DataType>
+      <StateNumber>5077</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="28" parent="22" name="cargos_primary">
+      <ObjectId>49204</ObjectId>
+      <ColNames>cargo_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="29" parent="22" name="cargos_primary">
+      <ObjectId>49205</ObjectId>
+      <ColNames>cargo_id</ColNames>
+      <UnderlyingIndexName>cargos_primary</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="23" name="empleado_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>5078</StateNumber>
+      <DefaultExpression>nextval(&apos;empleados_empleado_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>empleados_empleado_id_seq</SequenceName>
+    </column>
+    <column id="31" parent="23" name="nombres">
+      <Position>2</Position>
+      <DataType>varchar(60)|0</DataType>
+      <StateNumber>5078</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="32" parent="23" name="apellidos">
+      <Position>3</Position>
+      <DataType>varchar(60)|0</DataType>
+      <StateNumber>5078</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="33" parent="23" name="direccion">
+      <Position>4</Position>
+      <DataType>varchar(60)|0</DataType>
+      <StateNumber>5078</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="34" parent="23" name="cargo_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>5078</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="35" parent="23" name="empleados_primary">
+      <ObjectId>49212</ObjectId>
+      <ColNames>empleado_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="36" parent="23" name="r_1">
+      <ObjectId>49219</ObjectId>
+      <ColNames>cargo_id</ColNames>
+    </index>
+    <key id="37" parent="23" name="empleados_primary">
+      <ObjectId>49213</ObjectId>
+      <ColNames>empleado_id</ColNames>
+      <UnderlyingIndexName>empleados_primary</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="38" parent="23" name="r_1">
+      <ObjectId>49214</ObjectId>
+      <ColNames>cargo_id</ColNames>
+      <RefTableId>49200</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>cargos</RefTableName>
+      <RefKeyName>cargos_primary</RefKeyName>
+      <RefColNames>cargo_id</RefColNames>
+    </foreign-key>
+    <column id="39" parent="24" name="login_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>5080</StateNumber>
+      <DefaultExpression>nextval(&apos;login_login_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>login_login_id_seq</SequenceName>
+    </column>
+    <column id="40" parent="24" name="usuario_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>5080</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="41" parent="24" name="fecha">
+      <Position>3</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>5080</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="42" parent="24" name="codigo">
+      <Position>4</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>5080</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="43" parent="24" name="login_primary">
+      <ObjectId>49226</ObjectId>
+      <ColNames>login_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="44" parent="24" name="r_2">
+      <ObjectId>49228</ObjectId>
+      <ColNames>usuario_id</ColNames>
+    </index>
+    <key id="45" parent="24" name="login_primary">
+      <ObjectId>49227</ObjectId>
+      <ColNames>login_id</ColNames>
+      <UnderlyingIndexName>login_primary</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="46" parent="24" name="r_2">
+      <ObjectId>49238</ObjectId>
+      <ColNames>usuario_id</ColNames>
+      <RefTableId>49231</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>usuarios</RefTableName>
+      <RefKeyName>usuarios_primary</RefKeyName>
+      <RefColNames>usuario_id</RefColNames>
+    </foreign-key>
+    <column id="47" parent="25" name="usuario_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>5082</StateNumber>
+      <DefaultExpression>nextval(&apos;usuarios_usuario_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>usuarios_usuario_id_seq</SequenceName>
+    </column>
+    <column id="48" parent="25" name="nombres">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <StateNumber>5082</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="49" parent="25" name="apellidos">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+      <StateNumber>5082</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="50" parent="25" name="email">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+      <StateNumber>5082</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="51" parent="25" name="password">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+      <StateNumber>5082</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="52" parent="25" name="usuarios_primary">
+      <ObjectId>49235</ObjectId>
+      <ColNames>usuario_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="53" parent="25" name="email">
+      <ObjectId>49237</ObjectId>
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="54" parent="25" name="usuarios_primary">
+      <ObjectId>49236</ObjectId>
+      <ColNames>usuario_id</ColNames>
+      <UnderlyingIndexName>usuarios_primary</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

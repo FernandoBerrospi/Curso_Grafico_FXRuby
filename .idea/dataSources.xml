@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="MANTENEDOR_MVC@localhost" uuid="bb2f71a6-44e1-46ef-a198-42c65fc2a8a8">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/MANTENEDOR_MVC</jdbc-url>
+    </data-source>
+  </component>
+</project>

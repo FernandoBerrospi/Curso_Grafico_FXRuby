@@ -1,0 +1,58 @@
+require 'fox16'
+require_relative 'file_dialog.rb'
+include Fox
+class App < FXMainWindow
+
+    def initialize app
+        super(app,"FXProgressBar",width:600,height:600)
+        @app = app
+        self.set_elements
+        self.set_elements_items
+        self.set_listeners
+    end
+
+    def set_elements
+        @data_target = FXDataTarget.new(0)
+        @progress = FXProgressBar.new(self,@data_target,FXDataTarget::ID_VALUE,LAYOUT_SIDE_BOTTOM|LAYOUT_FILL_X)
+        # Imagen de Fondo
+        icon = FXPNGIcon.new(@app,File.open("../image/ruby.png","rb").read)
+        fondo = FXLabel.new(self,"",opts:LAYOUT_FILL_X|LAYOUT_FILL_Y)
+        fondo.icon = icon
+        fondo.iconPosition = ICON_BEFORE_TEXT
+        fondo.layoutHints = LAYOUT_FILL_Y|LAYOUT_FILL_X
+    end
+
+    def set_elements_items
+        @progress.barBGColor = "black"
+        @progress.barColor = "green"
+    end
+
+    def set_listeners
+
+    end
+
+    def tiempo(sender,sel,ptr)
+        @data_target.value = @data_target.value + 2
+        if @data_target.value >= 99
+            @form_edit_text = AppText.new(@app)
+            @form_edit_text.create
+            @form_edit_text.show(PLACEMENT_SCREEN)
+            self.close
+        else
+            getApp().addTimeout(50, method(:tiempo)) unless @data_target.value >= 99
+        end
+
+
+    end
+
+    def create
+        super
+        getApp().addTimeout(50, method(:tiempo))
+        show(PLACEMENT_SCREEN)
+    end
+end
+
+app = FXApp.new()
+App.new(app)
+app.create
+app.run
